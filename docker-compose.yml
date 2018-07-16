@@ -1,0 +1,57 @@
+###############################################################################
+#                          Generated on phpdocker.io                          #
+###############################################################################
+version: "3.1"
+services:
+
+    mailhog:
+      image: mailhog/mailhog:latest
+      container_name: php-banco-mailhog
+      ports:
+        - "1026:8025"
+
+    mysql:
+      image: mysql:8.0
+      container_name: php-banco-mysql
+      working_dir: /application
+      volumes:
+        - .:/application
+      environment:
+        - MYSQL_ROOT_PASSWORD=banco
+        - MYSQL_DATABASE=banco
+        - MYSQL_USER=banco
+        - MYSQL_PASSWORD=banco
+      ports:
+        - "1027:3306"
+
+    mariadb:
+      image: mariadb:10.1
+      container_name: php-banco-mariadb
+      working_dir: /application
+      volumes:
+        - .:/application
+      environment:
+        - MYSQL_ROOT_PASSWORD=banco
+        - MYSQL_DATABASE=banco
+        - MYSQL_USER=banco
+        - MYSQL_PASSWORD=banco
+      ports:
+        - "1028:3306"
+
+    webserver:
+      image: nginx:alpine
+      container_name: php-banco-webserver
+      working_dir: /application
+      volumes:
+          - .:/application
+          - ./phpdocker/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+      ports:
+       - "1025:80"
+
+    php-fpm:
+      build: phpdocker/php-fpm
+      container_name: php-banco-php-fpm
+      working_dir: /application
+      volumes:
+        - .:/application
+        - ./phpdocker/php-fpm/php-ini-overrides.ini:/etc/php/7.2/fpm/conf.d/99-overrides.ini
