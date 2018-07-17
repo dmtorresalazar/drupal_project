@@ -1088,8 +1088,7 @@ class DrupalUserProcessor implements LdapUserAttributesInterface {
 
     // Don't let empty 'name' value pass for user.
     if (empty($this->account->getAccountName())) {
-      // $this->account->set('name', $ldapUser[$this->server->get('user_attr')]);
-      $this->account->set('name', $this->server->userUsernameFromLdapEntry($ldapUser['attr']));
+      $this->account->set('name', $ldapUser[$this->server->get('user_attr')]);
     }
 
     // Set ldap_user_last_checked.
