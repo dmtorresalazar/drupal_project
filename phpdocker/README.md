@@ -27,7 +27,6 @@ Service|Address outside containers
 Webserver|[localhost:1025](http://localhost:1025)
 Mailhog web interface|[localhost:1026](http://localhost:1026)
 MySQL|**host:** `localhost`; **port:** `1027`
-MariaDB|**host:** `localhost`; **port:** `1028`
 
 ## Hosts within your environment ##
 
@@ -37,7 +36,6 @@ Service|Hostname|Port number
 ------|---------|-----------
 php-fpm|php-fpm|9000
 MySQL|mysql|3306 (default)
-MariaDB|mariadb|3306 (default)
 SMTP (Mailhog)|mailhog|1025 (default)
 
 # Docker compose cheatsheet #

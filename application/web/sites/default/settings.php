@@ -748,6 +748,7 @@ $settings['container_yamls'][] = $app_root . '/' . $site_path . '/services.yml';
 $settings['trusted_host_patterns'] = array(
      '^banco.onetree\.local$',
      '^.+\.banco.onetree\.local$',
+     '^localhost$',
    );
 
 /**
@@ -790,11 +791,11 @@ $settings['entity_update_batch_size'] = 50;
 #   include $app_root . '/' . $site_path . '/settings.local.php';
 # }
 $databases['default']['default'] = array (
-  'database' => 'alfresco',
-  'username' => 'root',
-  'password' => 'root',
+  'database' => 'banco',
+  'username' => 'banco',
+  'password' => 'banco',
   'prefix' => '',
-  'host' => 'localhost',
+  'host' => 'db',
   'port' => '3306',
   'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
   'driver' => 'mysql',
