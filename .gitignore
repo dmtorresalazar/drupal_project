@@ -1,1 +1,3 @@
-application/web/sites/default/files
+application/web/sites/default/files/*
+application/web/vendor/*
+application/web/core/*
