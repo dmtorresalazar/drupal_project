@@ -795,8 +795,8 @@ $databases['default']['default'] = array (
   'username' => 'banco',
   'password' => 'banco',
   'prefix' => '',
-  'host' => 'db',
-  'port' => '3306',
+  'host' => '172.20.0.1',
+  'port' => '1027',
   'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
   'driver' => 'mysql',
 );
